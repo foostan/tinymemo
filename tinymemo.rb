@@ -3,6 +3,8 @@ require 'yaml'
 require 'redis'
 
 class App < Sinatra::Base
+  set :environment, :production
+  set :port, 80
 
   get '/' do
     @memos = memos(sredis)
